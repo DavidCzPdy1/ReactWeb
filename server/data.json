@@ -1,0 +1,59 @@
+[
+  {
+    "type": "farm",
+    "name": "mobfarm",
+    "id": "mobfarm_1",
+    "versions": ["1.20.0"],
+    "structure": ["java", "bedrock"],
+    "url": "youtu.be/",
+    "author": {
+      "name": "honzu",
+      "url": "discord.gg/honzu"
+    },
+    "schematics": "farmlify.com/download/mobfarm_1.schematic",
+    "difficulty": 5,
+    "rates": 5,
+    "recomendation": 10,
+    "special": ["spawner", "biome_plants", "height_max_120"],
+    "items": [
+      {
+        "name": "gunpowder",
+        "drops": 1500
+      },
+      {
+        "name": "bones",
+        "drops": 760
+      }
+    ],
+    "blocks": [
+      {
+        "name": "fullblocks",
+        "quantity": 2000
+      },
+      {
+        "name": "slabs",
+        "quantity": 350
+      },
+      {
+        "name": "glass",
+        "quantity": 10
+      },
+      {
+        "name": "stairs",
+        "quantity": 500
+      },
+      {
+        "name": "trapdoors",
+        "quantity": 1000
+      },
+      {
+        "name": "pistons",
+        "quantity": 10
+      },
+      {
+        "name": "observers",
+        "quantity": 10
+      }
+    ]
+  }
+]
