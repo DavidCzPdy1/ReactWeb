@@ -9,7 +9,11 @@ import http from "../../functions/Utils/http";
 
 const sendMessage = async () => {
   let type = "farm"
-  let res = http.get(`findFarm`, {params: {type: type}}).then(n => console.log(n.data.data))
+
+  let parms = ["type", "name", "id", "version", "structure", "special", "item"]
+  
+  let res = await http.get(`findFarm`, {params: {type: type}}).then(n => n.data)
+  console.log(res)
 }
 
 const Home = () => {
