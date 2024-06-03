@@ -8,7 +8,7 @@ const filterData = (data, query) => {
   }
 
   let isPresent = ["version", "structure", "special"]
-  for (let key of isEqual) {
+  for (let key of isPresent) {
     if (query[key]) data = data.filter(n => n[key].includes(query[key]))
   }
 
