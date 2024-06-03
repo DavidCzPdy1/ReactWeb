@@ -131,4 +131,4 @@ dist
 
 # replit
 .replit
-.replit.nix
+replit.nix

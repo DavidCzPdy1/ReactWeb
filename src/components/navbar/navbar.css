@@ -13,21 +13,7 @@
   align-items: center;
   justify-content: "flex-start";
 }
-
-
-.farm__navbar-logo img {
-  width: 60px;
-  height: 60px;
-  margin-right: 32px;
-}
-
-.farm__navbar-slogan {
-  color: var(--color-text);
-  font-size: 20px;
-}
-
 /* - RIGHT -*/
-
 .farm__navbar-right {
   display: flex;
   align-items: center;
@@ -35,35 +21,69 @@
 }
 
 
-.farm__navbar-search {
-  padding: 0.5rem 1rem;
+.farm__navbar-logo img {
+  width: 60px;
+  height: 60px;
+  cursor: default;
+}
+
+.farm__navbar-title {
   color: var(--color-text);
+  font-family: var(--font-highlight);
+  font-size: 25px;
+  margin: 0px 0px 0px 16px;
+  cursor: default;
 }
 
-.search-box {
-width: 100%;
-height: 100%;
-color: var(--color-text);
-background-color: var(--color-footer);
-position: absolute!important;
-top: 100px;
-}
 
-/* - LOGIN BUTTON -*/
-.farm__navbar-login button, .farm__navbar-vip button {
-  padding: 0.5rem 1rem;
-  color: #fff;
-  background: #FF4820;
-  font-family: var(--font-family);
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 15px;
-  border: none;
-  outline: none;
+#search-icon {
+  position: relative;
+  left: 23px;
   cursor: pointer;
-  border-radius: 5px;
-  width: 100%;
 }
+#close-icon {
+  position: relative;
+  right: 23px;
+  cursor: pointer;
+}
+
+#search-text {
+  width: 200px;
+	padding: 2px 28px 4px 26px;
+	border: 2px solid var(--color-text);
+	border: none;
+	border-radius: 0px;
+	font: 18px/1 system-ui, sans-serif;
+	color: var(--color-text);
+	background-color: var(--color-search);
+}
+
+#search-text:hover, #search-text:focus  {
+  outline: none;
+}
+
+
+.farm__navbar-vip p {
+  display: flex;
+  color: var(--color-text);
+  font-family: var(--font-highlight);
+  cursor: pointer;
+}
+
+.farm__navbar-vip {
+  padding: 8px 16px;
+  border: 2px solid transparent;
+  transition: border 0.5s;
+  clip-path: polygon(    80% 0,    100% 20%,    100% 100%,    20% 100%,    0 80%,    0 0);
+}
+
+.farm__navbar-vip:hover {
+    cursor: pointer;
+    padding: 8px 16px;
+    border: 2px solid var(--color-text);
+    clip-path: polygon(    80% 0,    100% 20%,    100% 100%,    20% 100%,    0 80%,    0 0);
+}
+
 
 /* - DARKMODE BUTTON -*/
 .farm__navbar-darkmode {
@@ -71,21 +91,20 @@ top: 100px;
   padding: 1rem;
   color: var(--color-text);
   cursor: pointer;
-  transition: all 0s;
 }
 
 /* - LANGUAGE ICON - */
 .farm__navbar-lang {
-  margin-left: 2rem;
-  margin-right: 1rem;
+  margin-left: 32px;
+  margin-right: 16px;
   color: var(--color-text);
   cursor: pointer;
-  transition: all 0s;
 }
 /* - LANGUAGE SHORTCUT NAME - */
 .farm__navbar-lang-text {
   display: center;
   color: var(--color-text);
+  font-family: var(--font-highlight);
   cursor: default;
   text-align: center;
   display: center;
@@ -135,26 +154,19 @@ top: 100px;
 }
 
 
-@media screen and (max-width: 1050px) {
-
-}
-
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 800px) {
+  .farm__navbar-title {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 600px) {
-  .farm__navbar-slogan {
-    display: none;
-  }
+
 }
 
 @media screen and (max-width: 365px) {
-  .farm__navbar-left {
+  .farm__navbar-logo {
     display: none;
-  }
-
-  .farm__navbar-right {
-    display: flex-start;
   }
 }
 
@@ -162,10 +174,5 @@ top: 100px;
   .farm__navbar-right {
     display: none;
   }
-}
 
-@media screen and (max-width: 200px) {
-  .farm__navbar-lang {
-    display: none;
-  }
 }

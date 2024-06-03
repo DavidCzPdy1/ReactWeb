@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import useLocalStorage from 'use-local-storage';
 
 import { CTA, Navbar, Footer } from './components';
-import { Home, Login, Vip } from './pages';
+import { Home, Vip } from './pages';
 
 import './App.css'
 
@@ -19,7 +19,6 @@ export default function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
           <Route path="/vip" element={<Vip />} />
         </Routes>
         <Footer />

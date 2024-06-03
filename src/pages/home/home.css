@@ -8,34 +8,6 @@
 }
 
 
-.search-icon {
-  position: absolute;
-  left: 2.5rem;
-  width: 14px;
-}
-
-.clear-icon {
-  position: absolute;
-  right: 2.5rem;
-  width: 10px;
-  cursor: pointer;
-}
-
-.search_total {
-  color: var(--color-text);
-  background: rgb(255, 255, 255, 0);
-  outline: none;
-
-  border: 1px solid grey;
-  border-radius: 5px;
-  height: 20px;
-  width: 100%;
-  padding: 2px 23px 2px 30px;
-}
-.search_total:hover, .search_total:focus {
-  border: 1.5px solid grey;
-  background-color: rgb(255, 255, 255, 0.1);
-}
 
 .box_bedrock button, .box_java button {
   background: rgb(0, 0, 0, 0);

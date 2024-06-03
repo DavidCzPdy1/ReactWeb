@@ -30,34 +30,22 @@ const Navbar = () => {
               <img src={logo} />
             </NavLink>
         </div>
-        <div className="farm__navbar-slogan">
-          <p>{t("slogan")}</p>
+        <div className="farm__navbar-title">
+          <p>{t("title")}</p>
         </div>
+        <MdOutlineSearch size={20} id="search-icon" onClick={() => {document.getElementById('search-text').focus()} } />
+        <div className="farm__navbar-search">
+          <input type="text" id="search-text" placeholder="Search a farm!" />
+        </div>
+        <MdClose size={20} id="close-icon" onClick={() => {document.getElementById('search-text').value = ""} }/>
       </div>
 
       <div className="farm__navbar-right">
-        <div className="farm__navbar-search">
-          {searchMenu
-            ? <MdClose size={27} onClick={() => setSearchMenu(false)} />
-            : <MdOutlineSearch size={27} onClick={() => setSearchMenu(true)} />}
-
-            {searchMenu && (
-              <div className="search-box">
-                <h1>AHOJ</h1>
-              </div>
-          )}
-        </div>
-
-        <div className="farm__navbar-login">
-          <NavLink to="/login">
-            <button type="button" >{t("Log in")}</button>
-          </NavLink>
-        </div>
-        <div className="farm__navbar-vip">
-          <NavLink to="/vip">
-            <button type="button">{t("VIP")}</button>
-          </NavLink>
-        </div>
+        <NavLink to="/vip" style={{ textDecoration: 'none' }}>
+          <div className="farm__navbar-vip">
+            <p>{t("VIP")}</p>
+          </div>
+        </NavLink>
 
         <div className="farm__navbar-lang">
         {toggleMenu
@@ -97,3 +85,15 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+/*
+          {searchMenu
+            ? <MdClose size={27} onClick={() => setSearchMenu(false)} />
+            : <MdOutlineSearch size={27} onClick={() => setSearchMenu(true)} />}
+
+            {searchMenu && (
+              <div className="search-box">
+                <h1>AHOJ</h1>
+              </div>
+          )}
+*/
