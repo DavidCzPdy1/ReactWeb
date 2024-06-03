@@ -5,6 +5,8 @@
   align-items: center;
 
   background: var(--color-footer);
+
+  padding: 4rem 6rem;
 }
 
 .footer__copyright {

@@ -16,9 +16,7 @@ export default function App() {
   return (
     <Router>
       <div className="App" data-theme = {theme} >
-        <div className="gradient__bg">
-          <Navbar />
-        </div>
+        <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />

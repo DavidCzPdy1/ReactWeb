@@ -4,19 +4,7 @@
   text-align: center;
   height: auto;
 
-  background:-moz-radial-gradient(circle at 3% 25%, var(--color-gr0), var(--color-gr1));
-
-  /* safari 5.1+,chrome 10+ */
-  background:-webkit-radial-gradient(circle at 3% 25%, var(--color-gr0), var(--color-gr1));
-
-  /* opera 11.10+ */
-  background:-o-radial-gradient(circle at 3% 25%, var(--color-gr0), var(--color-gr1));
-
-  /* ie 10+ */
-  background:-ms-radial-gradient(circle at 3% 25%, var(--color-gr0), var(--color-gr1));
-
-  /* global 92%+ browsers support */
-  background:radial-gradient(circle at 3% 25%, var(--color-gr0), var(--color-gr1));
+  background: var(--bg-gradient);
 }
 
 

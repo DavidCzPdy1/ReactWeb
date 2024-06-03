@@ -28,7 +28,7 @@ const init = () => {
       backend: {
         loadPath: 'src/functions/language/locales/{{lng}}/{{ns}}.json',
       },
-      debug: true
+      debug: false
     });
 }
 
