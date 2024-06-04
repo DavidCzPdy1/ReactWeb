@@ -6,11 +6,9 @@
   background-color: unset;
 }
 
-body {
-  background: black;
-}
-
 .App {
   color: var(--color-text);
   background: var(--bg-gradient);
+  max-width: 1310px;
+  margin: 0 auto;
 }

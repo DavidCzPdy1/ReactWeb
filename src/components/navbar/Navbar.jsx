@@ -11,10 +11,18 @@ import langOptions from '../../functions/language/flags';
 
 import './navbar.css';
 
+import { searchInput, searchSubmit } from '../../functions/Utils/search';
+
 //https://css-tricks.com/snippets/css/a-guide-to-flexbox/#aa-justify-content
+
+const refreshBackround = (th) => {
+  document.getElementById('root').style.backgroundColor = (th === 'light' ? 'rgb(204, 221, 255)' : 'rgb(0, 51, 153)')
+  document.body.style.backgroundColor = (th === 'light' ? 'rgb(204, 221, 255)' : 'rgb(0, 51, 153)')
+}
+
+
 const Navbar = () => {
   const [toggleMenu, setToggleMenu ] = useState(false);
-  const [searchMenu, setSearchMenu ] = useState(false);
 
 
   const defaultDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -35,9 +43,15 @@ const Navbar = () => {
         </div>
         <MdOutlineSearch size={20} id="search-icon" onClick={() => {document.getElementById('search-text').focus()} } />
         <div className="farm__navbar-search">
-          <input type="text" id="search-text" placeholder="Search a farm!" />
+          <input type="text" id="search-text" placeholder="Search a farm!" onChange={searchInput} autoComplete="off" onKeyDown={searchSubmit}/>
         </div>
-        <MdClose size={20} id="close-icon" onClick={() => {document.getElementById('search-text').value = ""} }/>
+        <MdClose size={20} id="close-icon" onClick={() => {
+            document.getElementById('search-text').value = "";
+            let suggestions = document.getElementById('search-suggestions')
+            suggestions.style.display = 'none'
+            suggestions.innerHTML = ""
+          }} />
+        <div id="search-suggestions" />
       </div>
 
       <div className="farm__navbar-right">
@@ -48,35 +62,35 @@ const Navbar = () => {
         </NavLink>
 
         <div className="farm__navbar-lang">
-        {toggleMenu
-          ? <RiCloseLine size={27} onClick={() => setToggleMenu(false)} />
-          : <MdLanguage size={27} onClick={() => setToggleMenu(true)} />}
-        <div className="farm__navbar-lang-text">
-        {getLanguage().slice(0, 2)}
-        </div>
-        {toggleMenu && (
-          <div className="farm__navbar-lang_container">
-           {
-              langOptions.map(lang => {
-                return (
-                  <button onClick={() => changeLanguage(lang.code)} key={lang.code}>
-
-                    <img src={lang.img} />
-                    <p>{lang.label}</p>
-                  </button>
-                )
-              })
-            }
+          {toggleMenu
+            ? <RiCloseLine size={27} onClick={() => setToggleMenu(false)} />
+            : <MdLanguage size={27} onClick={() => setToggleMenu(true)} />}
+          <div className="farm__navbar-lang-text">
+          {getLanguage().slice(0, 2)}
           </div>
-        )}
-      </div>
 
-      <div className="farm__navbar-darkmode">
-        {
-          theme === 'light' ?
-            <MdDarkMode size={27} onClick={() => setTheme('dark') } /> :
-            <MdDarkMode size={27} onClick={() => setTheme('light') } />
+          {toggleMenu && (
+            <div className="farm__navbar-lang_container">
+            {
+                langOptions.map(lang => {
+                  return (
+                    <button onClick={() => changeLanguage(lang.code)} key={lang.code}>
 
+                      <img src={lang.img} />
+                      <p>{lang.label}</p>
+                    </button>
+                  )
+                })
+              }
+            </div>
+          )}
+        </div>
+
+        <div className="farm__navbar-darkmode">
+          {
+            theme === 'light' ?
+              <MdDarkMode size={27} onClick={() => { setTheme('dark'); refreshBackround('dark') }} /> :
+              <MdDarkMode size={27} onClick={() => { setTheme('light'); refreshBackround('light') }} />
           }
         </div>
       </div>

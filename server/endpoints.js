@@ -13,14 +13,14 @@ const filterData = (data, query) => {
   }
 
   if (query.item) data.filter(n => n.items.find(i => i.name == query.item))
-    
+
   return data
 }
 
 module.exports = (app) => {
 
   let data = JSON.parse(fs.readFileSync(path.join(__dirname, './data.json'), 'utf8'));
-  
+
   app.get("/", (req, res) => {
     res.json(
       {
@@ -40,5 +40,5 @@ module.exports = (app) => {
       }
     );
   })
-  
+
 }

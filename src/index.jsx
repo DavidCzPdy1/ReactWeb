@@ -6,5 +6,11 @@ import './index.css';
 import { init } from './functions/language/langHandler';
 init()
 
+import { save } from './functions/Utils/search';
+
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<App />);
+
+
+save()
