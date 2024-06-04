@@ -190,6 +190,9 @@
   .farm__navbar-logo {
     display: none;
   }
+  #search-text {
+    width: 100%
+  }
 }
 
 @media screen and (max-width: 470px) {
@@ -204,10 +207,6 @@
 }
 
 @media screen and (max-width: 420px) {
-  #search-text {
-    width: 110px;
-  }
-
   .farm__navbar-darkmode {
     display: none;
   }
@@ -222,10 +221,6 @@
 @media screen and (max-width: 260px) {
   .farm__navbar-right {
     display: none;
-  }
-
-  #search-text {
-    width: 100%
   }
 
 }
