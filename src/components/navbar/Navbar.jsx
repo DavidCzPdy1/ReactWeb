@@ -15,7 +15,7 @@ import { searchInput, searchSubmit } from '../../functions/Utils/search';
 
 //https://css-tricks.com/snippets/css/a-guide-to-flexbox/#aa-justify-content
 
-const refreshBackround = (th) => {
+const refreshBackground = (th) => {
   document.getElementById('root').style.backgroundColor = (th === 'light' ? 'rgb(204, 221, 255)' : 'rgb(0, 51, 153)')
   document.body.style.backgroundColor = (th === 'light' ? 'rgb(204, 221, 255)' : 'rgb(0, 51, 153)')
 }
@@ -43,7 +43,7 @@ const Navbar = () => {
         </div>
         <MdOutlineSearch size={20} id="search-icon" onClick={() => {document.getElementById('search-text').focus()} } />
         <div className="farm__navbar-search">
-          <input type="text" id="search-text" placeholder="Search a farm!" onChange={searchInput} autoComplete="off" onKeyDown={searchSubmit}/>
+          <input type="text" id="search-text" placeholder={t("Search a farm!")} onChange={searchInput} autoComplete="off" onKeyDown={searchSubmit}/>
         </div>
         <MdClose size={20} id="close-icon" onClick={() => {
             document.getElementById('search-text').value = "";
@@ -89,8 +89,8 @@ const Navbar = () => {
         <div className="farm__navbar-darkmode">
           {
             theme === 'light' ?
-              <MdDarkMode size={27} onClick={() => { setTheme('dark'); refreshBackround('dark') }} /> :
-              <MdDarkMode size={27} onClick={() => { setTheme('light'); refreshBackround('light') }} />
+              <MdDarkMode size={27} onClick={() => { setTheme('dark'); refreshBackground('dark') }} /> :
+              <MdDarkMode size={27} onClick={() => { setTheme('light'); refreshBackground('light') }} />
           }
         </div>
       </div>

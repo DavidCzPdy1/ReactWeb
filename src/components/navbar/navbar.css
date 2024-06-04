@@ -49,7 +49,7 @@
 
 #search-text {
   width: 200px;
-	padding: 2px 28px 4px 26px;
+	padding: 2px 28px 2px 26px;
 	border: 2px solid var(--color-text);
 	border: none;
 	border-radius: 0px;
@@ -136,7 +136,7 @@
 
 /* - LANGUAGE SELECTION LIST BUTTON -*/
 .farm__navbar-lang_container button {
-  padding: 0.5rem 0.5rem;
+  padding: 8px 8px;
   color: var(--color-text);
   background: rgb(100,0,0,0.0);
   font-family: var(--font-family);
@@ -147,23 +147,25 @@
   outline: none;
   cursor: pointer;
   border-radius: 5px;
-  display: grid;
+  display: flex;
   justify-items: center;
 }
 
 /* - LANGUAGE SELECTION IMAGE -*/
 .farm__navbar-lang img {
-  width: 45px;
-  height: 30px;
+  width: auto;
+  height: 40px;
   display: flex;
   cursor: pointer;
 }
 
+
 /* - LANGUAGE SELECTION -*/
 .farm__navbar-lang_container {
   display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   flex-direction: column;
   background: var(--color-footer);
   padding: 1rem;
