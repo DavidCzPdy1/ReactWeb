@@ -35,7 +35,7 @@ const Navbar = () => {
         </div>
         <MdOutlineSearch size={20} id="search-icon" onClick={() => {document.getElementById('search-text').focus()} } />
         <div className="farm__navbar-search">
-          <input type="text" id="search-text" placeholder="Search a farm!" />
+          <input type="text" id="search-text" placeholder={t("Search a farm!")} />
         </div>
         <MdClose size={20} id="close-icon" onClick={() => {document.getElementById('search-text').value = ""} }/>
       </div>
