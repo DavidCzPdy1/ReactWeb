@@ -2,7 +2,7 @@
 import http from "./http";
 
 const save = async () => {
-  let data = await http.get(`findFarm`, {params: {}}).then(n => n.data)
+  let data = await http.get(`farms`, {params: {}}).then(n => n.data)
   if (data.success) {
     localStorage.setItem("data", JSON.stringify(data))
   }

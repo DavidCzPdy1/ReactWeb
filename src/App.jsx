@@ -14,15 +14,20 @@ export default function App() {
   const [theme, setTheme] = useLocalStorage('theme', defaultDark ? 'dark' : 'light');
 
   return (
-    <Router>
-      <div className="App" data-theme = {theme} >
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/vip" element={<Vip />} />
-        </Routes>
-        <Footer />
-      </div>
-    </Router>
+    <div className="wrapper">
+      <div className="ear-left ad-container"/>
+      <div className="ear-right ad-container"/>
+      <Router>
+        <div className="App" data-theme = {theme} >
+          <Navbar />
+          <div className="ear-middle ad-container"/>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/vip" element={<Vip />} />
+          </Routes>
+          <Footer />
+        </div>
+      </Router>
+    </div>
   )
 }

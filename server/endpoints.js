@@ -31,6 +31,16 @@ module.exports = (app) => {
 
   });
 
+  app.get('/farms', (req, res) => {
+    res.json(
+      {
+        success: true,
+        timestamp: new Date().getTime(),
+        data: JSON.parse(fs.readFileSync(path.join(__dirname, './data.json'), 'utf8'))
+      }
+    );
+  })
+
   app.get('/findFarm', (req, res) => {
     res.json(
       {

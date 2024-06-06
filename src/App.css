@@ -8,7 +8,74 @@
 
 .App {
   color: var(--color-text);
-  background: var(--bg-gradient);
+  background: var(--bg-footer-background);
   max-width: 1310px;
   margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.ear-left {
+  height: 400px;
+  width: 200px;
+  background-color: rgb(222, 226, 230);
+  position: fixed;
+  top: 100px;
+  z-index: 0;
+}
+
+.ear-right {
+  height: 400px;
+  width: 200px;
+  background-color: rgb(222, 226, 230);
+  position: fixed;
+  left: calc(100% - 200px);
+  top: 100px;
+  z-index: 0;
+}
+
+.ear-middle {
+  display: none;
+  width: auto;
+  height: 200px;
+  background-color: rgb(222, 226, 230);
+}
+
+@media screen and (max-width: 1712px) {
+  .App {
+    margin: 0 auto 0 200px;
+  }
+}
+
+@media screen and (max-width: 1600px) {
+  .App {
+    margin: 0 0 0 auto;
+  }
+
+  .ear-right {
+    display: none;
+  }
+}
+
+
+@media screen and (max-width: 1510px) {
+  .App {
+    margin: 0 0 0 200px;
+    width: auto;
+  }
+}
+
+@media screen and (max-width: 1310px) {
+  .App {
+    margin: 0 0 0 0px;
+    width: auto;
+  }
+
+  .ear-right, .ear-right {
+    display: none;
+  }
+
+  .ear-middle {
+    display: block;
+  }
 }
