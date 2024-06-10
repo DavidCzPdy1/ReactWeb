@@ -8,16 +8,18 @@ const Home = () => {
 
   return (
     <div className="home__content">
-      <div className="box_bedrock" >
-        <button type="button" onClick={(e) => {}} >
-          <p>{t("Bedrock Farms")}</p>
-        </button>
-      </div>
+      <div className="home__filter">
+        <div className="box_bedrock" >
+          <button type="button" onClick={(e) => {}} >
+            <p>{t("Bedrock Farms")}</p>
+          </button>
+        </div>
 
-      <div className="box_java" >
-        <button type="button"  onClick={(e) => {}} >
-          <p>{t("Java Farms")}</p>
-        </button>
+        <div className="box_java" >
+          <button type="button"  onClick={(e) => {}} >
+            <p>{t("Java Farms")}</p>
+          </button>
+        </div>
       </div>
     </div>
   );
