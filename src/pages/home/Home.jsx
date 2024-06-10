@@ -1,7 +1,5 @@
 import { useTranslation } from 'react-i18next';
 import './home.css';
-import bedrock from '../../resources/mc_bedrock.jpeg';
-import java from '../../resources/mc_java.jpg';
 
 const Home = () => {
   const { t } = useTranslation()
@@ -9,17 +7,33 @@ const Home = () => {
   return (
     <div className="home__content">
       <div className="home__filter">
-        <div className="box_bedrock" >
-          <button type="button" onClick={(e) => {}} >
+        <div className="box_bedrock filter__box" onClick={(e) => {}} >
             <p>{t("Bedrock Farms")}</p>
-          </button>
         </div>
 
-        <div className="box_java" >
-          <button type="button"  onClick={(e) => {}} >
+        <div className="box_java filter__box" onClick={(e) => {}} >
             <p>{t("Java Farms")}</p>
-          </button>
         </div>
+
+        <div className="box_type filter__box" onClick={(e) => {}} >
+          <p>{t("All Types")}</p>
+        </div>
+        <div className="box_name filter__box" onClick={(e) => {}} >
+          <p>{t("All names")}</p>
+        </div>
+        <div className="box_item filter__box" onClick={(e) => {}} >
+          <p>{t("All Items")}</p>
+        </div>
+        <div className="box_version filter__box" onClick={(e) => {}} >
+          <p>{t("All Versions")}</p>
+        </div>
+        <div className="box_difficulty filter__box" onClick={(e) => {}} >
+          <p>{t("All Difficulties")}</p>
+        </div>
+      </div>
+
+      <div className="home__farms" >
+
       </div>
     </div>
   );
