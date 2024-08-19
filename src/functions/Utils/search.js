@@ -1,6 +1,7 @@
 
 import http from "./http";
 
+
 const save = async () => {
   let data = await http.get(`farms`, {params: {}}).then(n => n.data)
   if (data.success) {
@@ -32,6 +33,7 @@ const searchInput = (event) => {
 
   let suggestions = document.getElementById('search-suggestions')
   let input = event.target.value.toLowerCase()
+
   if (input.length == 0) {
     suggestions.style.display = 'none'
     suggestions.innerHTML = ""
@@ -58,7 +60,10 @@ const searchInput = (event) => {
     }
   }
 
-  if (!namesList.length) return
+  if (!namesList.length) {
+      suggestions.style.display = 'none'
+      return
+  }
 
   namesList = namesList.sort(a => a.startsWith(input.toLowerCase()) ? -1 : 1)
 
@@ -90,6 +95,7 @@ const searchInput = (event) => {
 }
 
 const searchSubmit = async (event) => {
+
   if (event.key !== 'Enter') return
 
   let database = JSON.parse(localStorage.getItem('data') || {});
@@ -101,12 +107,15 @@ const searchSubmit = async (event) => {
 
   console.log(`${possibleFarms.length} farms, ${possibleItems.length} items`)
 
-
   let suggestions = document.getElementById('search-suggestions')
   suggestions.style.display = 'none'
   suggestions.innerHTML = ""
   event.target.value = "";
   event.target.blur()
+
+  localStorage.setItem("showData", JSON.stringify(possibleFarms[0]||possibleItems[0]))
+
+  window.location.assign('farm');
 }
 
 

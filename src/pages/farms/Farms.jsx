@@ -1,52 +1,31 @@
 import { useTranslation } from 'react-i18next';
 import './farms.css';
-import { MdOutlineSearch, MdClose } from "react-icons/md";
 
-import http from "../../functions/Utils/http";
-
-
-const sendMessage = async () => {
-  let type = "farm"
-
-  let parms = ["type", "name", "id", "version", "structure", "special", "item"]
-  
-  let res = await http.get(`findFarm`, {params: {type: type}}).then(n => n.data)
-  console.log(res)
-  return res
-}
 
 const Farms = () => {
   const { t } = useTranslation()
-  //<MdOutlineSearch size={27} className="search-icon" />
-  //<MdClose size={27} className="clear-icon"/>
+  let data = localStorage.getItem("showData")
+  console.log(data)
+
+  if (data == null) {
+    return (
+      <div className="home__window"> {t("NODATA")} </div>
+    );
+  }
+  data = JSON.parse(data)
+console.log(data.type)
+
   return (
     <div className="home__window">
-      <div className="home__search">
-        
-        <input
-          
-          id="search_total"
-          name="search_total"
-          className="search_total"
-          placeholder={t("Search a farm!")}
-          onChange={(e) => console.log(e.target.value)}
-        />
-        
-      </div>
-      <div className="box_bedrock" >
-        <button type="button" onClick={(e) => sendMessage()}>
-          <img src={bedrock} />
-          <p>{t("Bedrock Farms")}</p>
-        </button>
+        {t(data.type)}
+        <br></br>
+        {t(data.name)}
+        <br></br>
+        {t(data.url)}
+        <br></br>
+        {t(data.schematics)}
       </div>
       
-      <div className="box_java" >
-        <button type="button" >
-          <img src={java} />
-          <p>{t("Java Farms")}</p>
-        </button>
-      </div>
-    </div>
   );
 };
 

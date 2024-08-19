@@ -32,9 +32,7 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="home__farms" >
-
-      </div>
+      <div className="home__farms" id="farms-content" ></div>
     </div>
   );
 };
