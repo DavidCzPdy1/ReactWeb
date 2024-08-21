@@ -92,6 +92,18 @@ const searchInput = (event) => {
     suggestions.style.display = 'none'
   })
 
+  let farmsList = document.getElementById('farms-content')
+
+  farmsList.innerHTML = ""
+  let farmsSeznam = document.createElement("ul");
+
+  for (let farm of possibleFarms) {
+    let entity = document.createElement("li");
+    entity.innerHTML = farm.name
+    farmsSeznam.appendChild(entity)
+  }
+  farmsList.appendChild(farmsSeznam)
+
 }
 
 const searchSubmit = async (event) => {
